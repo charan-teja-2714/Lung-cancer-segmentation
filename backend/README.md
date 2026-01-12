@@ -22,6 +22,47 @@ cd src
 python main.py
 ```
 
+4. Prepare Dataset:
+```backend/data/raw/
+├── train/
+│   ├── CT/ADC, CT/LCC, CT/SCC
+│   └── MASK/ADC, MASK/LCC, MASK/SCC
+└── test/
+    └── CT/ADC, CT/LCC, CT/SCC
+```
+
+5. Run in terminal:
+```
+python src/convert_jpg_to_nifti.py
+```
+
+6. Set nnU‑Net Environment Variables:
+```
+set nnUNet_raw=%cd%\data\nnunet\nnUNet_raw
+set nnUNet_preprocessed=%cd%\data\nnunet\nnUNet_preprocessed
+set nnUNet_results=%cd%\data\nnunet\nnUNet_results
+set OMP_NUM_THREADS=1
+set MKL_NUM_THREADS=1
+```
+
+Verify
+
+```
+echo %nnUNet_raw%
+echo %nnUNet_preprocessed%
+echo %nnUNet_results%
+```
+
+7.  Model Training (GPU Recommended):
+```
+nnUNetv2_train 1 2d 0 --npz
+```
+
+8. Train ALL 5 folds automatically (RECOMMENDED):
+```
+train_all_folds.bat
+```
+
 The API will be available at `http://localhost:8000`
 
 ## API Endpoints
@@ -62,17 +103,11 @@ The system includes fallback functionality when nnU-Net models are not available
 
 - `main.py` - FastAPI application
 - `inference.py` - Segmentation pipeline
-- `model_loader.py` - nnU-Net model loading
 - `utils.py` - Image processing utilities
 - `convert_jpg_to_nifti.py` - Format conversion
 - `validate_masks.py` - Mask validation
-- `train_nnunet.py` - Training setup
 
 
-
-set nnUNet_raw=%cd%\data\nnunet\nnUNet_raw
-set nnUNet_preprocessed=%cd%\data\nnunet\nnUNet_preprocessed
-set nnUNet_results=%cd%\data\nnunet\nnUNet_results
 
 
 
