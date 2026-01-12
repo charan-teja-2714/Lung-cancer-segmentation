@@ -1,0 +1,94 @@
+#################################
+# PYTHON
+#################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+#################################
+# VIRTUAL ENV
+#################################
+venv/
+.env
+.env.*
+
+#################################
+# NNUNET DATA (CRITICAL)
+#################################
+# Raw dataset
+backend/data/raw/
+backend/data/raw/**
+
+# nnU-Net generated folders
+backend/data/nnunet/nnUNet_raw/
+backend/data/nnunet/nnUNet_preprocessed/
+backend/data/nnunet/nnUNet_results/
+
+# All dataset files
+*.nii.gz
+*.nii
+*.dcm
+*.png
+*.jpg
+*.jpeg
+
+#################################
+# TRAINING OUTPUTS
+#################################
+# Model files
+backend/src/train_nnunet.py
+backend/src/model_loader.py
+
+# Training artifacts
+*.pth
+*.pt
+*.npz
+*.npy
+*.pkl
+*.h5
+*.log
+*.ckpt
+
+#################################
+# FASTAPI / BACKEND
+#################################
+*.sqlite3
+*.db
+uploads/
+outputs/
+
+#################################
+# FRONTEND (REACT / NODE)
+#################################
+node_modules/
+dist/
+build/
+.env.local
+.env.development.local
+.env.production.local
+
+#################################
+# OS FILES
+#################################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+#################################
+# IDE / EDITOR
+#################################
+.vscode/
+.idea/
+*.swp
+*.swo
+
+#################################
+# JUPYTER / TEMP
+#################################
+.ipynb_checkpoints/
+temp/
+tmp/
