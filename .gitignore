@@ -19,9 +19,27 @@ venv/
 #################################
 # NNUNET DATA (CRITICAL)
 #################################
-# Raw dataset
-backend/data/raw/
-backend/data/raw/**
+# Raw dataset - exclude data but keep structure
+backend/data/raw/*
+!backend/data/raw/
+!backend/data/raw/train/
+!backend/data/raw/test/
+!backend/data/raw/train/CT/
+!backend/data/raw/train/MASK/
+!backend/data/raw/test/CT/
+!backend/data/raw/test/MASK/
+!backend/data/raw/train/CT/ADC/
+!backend/data/raw/train/CT/LCC/
+!backend/data/raw/train/CT/SCC/
+!backend/data/raw/train/MASK/ADC/
+!backend/data/raw/train/MASK/LCC/
+!backend/data/raw/train/MASK/SCC/
+!backend/data/raw/test/CT/ADC/
+!backend/data/raw/test/CT/LCC/
+!backend/data/raw/test/CT/SCC/
+!backend/data/raw/test/MASK/ADC/
+!backend/data/raw/test/MASK/LCC/
+!backend/data/raw/test/MASK/SCC/
 
 # nnU-Net generated folders
 backend/data/nnunet/nnUNet_raw/
