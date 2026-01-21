@@ -20,6 +20,8 @@ venv/
 # NNUNET DATA (CRITICAL)
 #################################
 # Raw dataset - exclude data but keep structure
+
+!frontend/
 backend/data/raw/*
 !backend/data/raw/
 !backend/data/raw/train/
