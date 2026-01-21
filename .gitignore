@@ -21,7 +21,7 @@ venv/
 #################################
 # Raw dataset - exclude data but keep structure
 
-!frontend/
+frontend/
 backend/data/raw/*
 !backend/data/raw/
 !backend/data/raw/train/
